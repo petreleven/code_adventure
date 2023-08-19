@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head> </head>
+   <body>
+      <button id="btn_id">CLICK ME</button>
+      <script>
+         function process(data) {
+            //do something with data
+         }
+         //Use scoping as data is not needed to save memory
+         {
+            let somebigdata = {};
+            process(somebigdata);
+         }
+         //Event listener not using the big data
+         var btn = document.getElementById("btn_id");
+         btn.addEventListener("click", function triggeredFn(e) {
+            e.preventDefault();
+            console.log("Clicked");
+         });
+      </script>
+   </body>
+</html>
